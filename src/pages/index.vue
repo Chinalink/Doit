@@ -101,57 +101,57 @@
     background: rgba(206, 202, 202, 0.2);
   }
   .index .index-topbox-radius{
-    margin: 10.71rem auto 0;
-    width: 19.64rem;
-    height: 19.64rem;
+    margin: 3rem auto 0;
+    width: 5.5rem;
+    height: 5.5rem;
     border-radius: 50%;
-    border: .29rem solid rgba(255, 255, 255, 0.5);
+    border: .08rem solid rgba(255, 255, 255, 0.5);
   }
   .index .index-topbox .index-topbox-text {
-    margin-top: 5rem;
-    margin-left: 5rem;
-    width: 9.64rem;
-    height: 9.64rem;
+    margin-top: 1.4rem;
+    margin-left: 1.4rem;
+    width: 2.7rem;
+    height: 2.7rem;
   }
   .index .index-topbox h3 {
-    padding: .89rem 0;
+    padding: .25rem 0;
     font-family: "宋体";
-    font-size: 2.68rem;
+    font-size: .75rem;
     color: #fff;
     text-align: center;
-    letter-spacing: .36rem;
+    letter-spacing: .1rem;
   }
   .index .index-topbox .button-error {
     display: block;
-    margin: 2.86rem auto 0;
-    width: 9.64rem;
-    height: 2.5rem;
-    line-height: 2.5rem;
-    border-radius: 2.5rem;
+    margin: .8rem auto 0;
+    width: 2.7rem;
+    height: .7rem;
+    line-height: .7rem;
+    border-radius: .7rem;
     box-shadow: 1px -1px #ff1a1a;
-    font-size: 1.21rem;
+    font-size: .34rem;
     color: #fff;
   }
   .index .index-topbox p {
-    padding: .54rem 0;
-    border-top: .07rem solid #fff;
-    border-bottom: .07rem solid #fff;
-    font-size: .86rem;
+    padding: .15rem 0;
+    border-top: .02rem solid #fff;
+    border-bottom: .02rem solid #fff;
+    font-size: .24rem;
     text-align: center;
     color: rgba(255, 255, 255, 0.7);
   }
   .index .index-topbox p span {
-    margin-right: .18rem;
+    margin-right: .05rem;
   }
   .index .index-topbox span.tip {
-    margin-top: 4.29rem;
+    margin-top: 1.2rem;
     display: block;
-    font-size: .79rem;
+    font-size: .22rem;
     color: rgba(255, 255, 255, 0.8);
     text-align: center;
   }
   .index .index-topbox p span:last-child {
-    margin-left: .36rem;
+    margin-left: .1rem;
     color: #fff;
   }
 </style>

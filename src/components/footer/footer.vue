@@ -32,12 +32,12 @@
 <style>
 .dm-footer{
   display: flex;
-  padding: .36rem 0 .18rem 0;
+  padding: .1rem 0 .05rem 0;
   width: 100%;
-  height: 3.21rem;
+  height: .9rem;
   line-height: normal;
   background: #f7f7f7;
-  border-top: .07rem solid #dadada;
+  border-top: .02rem solid #dadada;
 }
 .dm-footer.is-fixed {
   position: fixed;
@@ -46,18 +46,18 @@
 .dm-footer>a{
   flex: 1;
   margin: 0 auto;
-  font-size: .64rem;
+  font-size: .18rem;
   text-align: center;
   text-decoration: none;
 }
 .dm-footer>a:nth-child(3) i{
-  font-size: 3.21rem;
-  line-height: 2.5rem;
+  font-size: .9rem;
+  line-height: .7rem;
   color: #63cb74;
 }
 .dm-footer>a>i{
   display: block;
-  font-size: 1.43rem;
+  font-size: .4rem;
 }
 .dm-footer>a.active{
   color: #63cb74;

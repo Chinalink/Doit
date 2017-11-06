@@ -53,19 +53,19 @@
 <style>
   .record-banner{
     width: 100%;
-    height: 12.57rem;
+    height: 3.52rem;
     background: url('../assets/top_banner.jpg') no-repeat;
     background-size: contain;
   }
   .record-banner .tab-box {
-    padding-top: 1.07rem;
+    padding-top: .3rem;
     text-align: center;
   }
   .record-banner .tab-box button{
-    margin: 0 .71rem;
+    margin: 0 .2rem;
     background: none;
     border:0;
-    font-size: 1.14rem;
+    font-size: .32rem;
     color: rgba(255, 255, 255, 0.5);
   }
   .record-banner .tab-box button.active{
@@ -76,13 +76,13 @@
     padding: 0;
   }
   .record-list>li{
-    margin: .83rem 0 0 0;
-    padding: .71rem;
-    height: 5.36rem;
-    line-height: 3.93rem;
+    margin: .25rem 0 0 0;
+    padding: .2rem;
+    height: 1.5rem;
+    line-height: 1.1rem;
     background: #1faff6;
     list-style: none;
-    border-radius: .21rem;
+    border-radius: .06rem;
     color: #fff;
   }
   .record-list>li>div{
@@ -90,14 +90,14 @@
     line-height: normal;
   }
   .record-list>li i{
-    font-size: 1.79rem;
-    margin-right: 1.07rem;
+    font-size: .5rem;
+    margin-right: .3rem;
   }
   .record-list>li p, .record-list>li span{
-    font-size: 1.29rem;
-    line-height: 1.965rem;
+    font-size: .36rem;
+    line-height: .55rem;
   }
   .record-list>li span{
-    font-size: 1rem;
+    font-size: .28rem;
   }
 </style>
