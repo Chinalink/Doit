@@ -32,12 +32,12 @@
 <style>
 .dm-footer{
   display: flex;
-  padding: .1rem 0 .05rem 0;
+  padding: .05rem 0;
   width: 100%;
   height: .9rem;
   line-height: normal;
-  background: #f7f7f7;
-  border-top: .02rem solid #dadada;
+  background: #fff;
+  border-top: .02rem solid #e8e8e8;
 }
 .dm-footer.is-fixed {
   position: fixed;
@@ -49,17 +49,18 @@
   font-size: .18rem;
   text-align: center;
   text-decoration: none;
+  color: #989898;
 }
 .dm-footer>a:nth-child(3) i{
   font-size: .9rem;
   line-height: .7rem;
-  color: #63cb74;
+  color: #419af8;
 }
 .dm-footer>a>i{
   display: block;
   font-size: .4rem;
 }
 .dm-footer>a.active{
-  color: #63cb74;
+  color: #419af8;
 }
 </style>

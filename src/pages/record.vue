@@ -1,9 +1,9 @@
 <template>
   <div>
-    <div class="record-banner">
-      <div class="tab-box">
-        <button type="button" class="active">待完成</button>
-        <button type="button">已完成</button>
+    <div class="record-header">
+      <div class="btn-box">
+        <button type="button" name="button" class="active">进行中</button>
+        <button type="button" name="button">已完成</button>
       </div>
     </div>
     <ul class="record-list">
@@ -51,38 +51,56 @@
   }
 </script>
 <style>
-  .record-banner{
+  .record-header {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 3.52rem;
-    background: url('../assets/top_banner.jpg') no-repeat;
-    background-size: contain;
+    height: .88rem;
+    background: #fff;
+    border-bottom: .02rem solid #e8e8e8;
   }
-  .record-banner .tab-box {
-    padding-top: .3rem;
-    text-align: center;
+  .record-header .btn-box {
+    margin: 0 auto;
+    overflow: hidden;
+    width: 5rem;
   }
-  .record-banner .tab-box button{
-    margin: 0 .2rem;
+  .record-header button {
+    padding: 0 .85rem;
+    float: left;
+    border: 0;
     background: none;
-    border:0;
-    font-size: .32rem;
-    color: rgba(255, 255, 255, 0.5);
+    font-size: .24rem;
+    line-height: .88rem;
+    color: #989898;
   }
-  .record-banner .tab-box button.active{
-    color: #fff;
+  .record-header button.active {
+    position: relative;
+    color: #419af8;
+  }
+  .record-header button.active::before {
+    display: block;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: .4rem;
+    border: .01rem solid #419af8;
   }
   .record-list{
-    margin: 0 .89rem;
-    padding: 0;
+    margin: .88rem .30rem 0;
+    padding: .25rem 0 .9rem;
   }
   .record-list>li{
-    margin: .25rem 0 0 0;
+    outline: none;
+    margin-bottom: .25rem;
     padding: .2rem;
     height: 1.5rem;
-    line-height: 1.1rem;
-    background: #1faff6;
+    background: linear-gradient(to right, #8bd5f4 0%, #8fb3f2 100%);
+    border-radius: .08rem;
+    box-shadow: 0 .04rem .04rem #d7d7d7;
     list-style: none;
-    border-radius: .06rem;
     color: #fff;
   }
   .record-list>li>div{
@@ -90,14 +108,19 @@
     line-height: normal;
   }
   .record-list>li i{
+    margin-top: .25rem;
+    width: .5rem;
+    height: .5rem;
+    line-height: 1;
     font-size: .5rem;
-    margin-right: .3rem;
+    margin-right: .5rem;
   }
   .record-list>li p, .record-list>li span{
-    font-size: .36rem;
+    font-size: .32rem;
     line-height: .55rem;
   }
   .record-list>li span{
-    font-size: .28rem;
+    display: block;
+    font-size: .26rem;
   }
 </style>

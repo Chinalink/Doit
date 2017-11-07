@@ -144,6 +144,7 @@
     margin-right: .05rem;
   }
   .index .index-topbox span.tip {
+    padding: 0 .25rem;
     margin-top: 1.2rem;
     display: block;
     font-size: .22rem;
