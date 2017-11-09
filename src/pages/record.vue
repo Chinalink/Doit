@@ -2,12 +2,12 @@
   <div>
     <div class="record-header">
       <div class="btn-box">
-        <button type="button" name="button" class="active">进行中</button>
-        <button type="button" name="button">已完成</button>
+        <button type="button" name="button" v-for="(button, index) in buttons" :class="{'active': button.active}" @click="switchList(index)">{{ button.text }}</button>
       </div>
     </div>
-    <ul class="record-list">
-      <li v-for="item in recordNav" @click="choice(item)">
+    <!-- 进行中 -->
+    <ul class="record-list" v-show="buttons[0].active">
+      <li v-for="item in doingList" @click="choice(item)">
         <i class="fl iconfont" :class="[item.check ? 'icon-checked' : 'icon-unchecked']"></i>
         <div class="fl">
           <p >{{ item.title }}</p>
@@ -15,30 +15,53 @@
         </div>
       </li>
     </ul>
+    <!-- 已完成 -->
+    <dm-cards className="icon-complete" :cardsData="completeList" v-show="buttons[1].active"></dm-cards>
+    <!-- 未完成 -->
+    <dm-cards className="icon-not" :cardsData="notList" v-show="buttons[2].active"></dm-cards>
     <dm-footer fixed></dm-footer>
   </div>
 </template>
 <script>
   import footNav from '../components/footer/footer.vue'
+  import cards from '../components/cards/cards.vue'
 
   export default {
     data () {
       return {
-        recordNav: [
+        buttons: [
+          { text: '进行中', active: true },
+          { text: '已完成', active: false },
+          { text: '未完成', active: false }
+        ],
+        doingList: [  // 进行中数据
           { title: '每日打卡', time: '2017-07-01 15:30', check: false },
           { title: 'html', time: '2017-07-01 15:30', check: false },
-          { title: 'css', time: '2017-07-01 15:30', check: false },
-          { title: 'jquery', time: '2017-07-01 15:30', check: false },
-          { title: 'javascript', time: '2017-07-01 15:30', check: false },
+          { title: 'css', time: '2017-07-01 15:30', check: false }
+        ],
+        completeList: [ // 已完成数据
           { title: '每日打卡', time: '2017-07-01 15:30', check: false },
           { title: 'html', time: '2017-07-01 15:30', check: false },
-          { title: 'css', time: '2017-07-01 15:30', check: false },
-          { title: 'jquery', time: '2017-07-01 15:30', check: false },
-          { title: 'javascript', time: '2017-07-01 15:30', check: false }
+          { title: 'css', time: '2017-07-01 15:30', check: false }
+        ],
+        notList: [ // 未完成数据
+          { title: '每日打卡', time: '2017-07-01 15:30', check: false },
+          { title: 'html', time: '2017-07-01 15:30', check: false },
+          { title: 'css', time: '2017-07-01 15:30', check: false }
         ]
       }
     },
     methods: {
+      switchList (index) {
+        this.buttons.forEach((item) => {
+          item.active = false
+        })
+        this.buttons[index].active = true
+      },
+      /**
+       * [choice 勾选进行中的项目]
+       * @param  {[type]} item [当前勾选的卡片]
+       */
       choice (item) {
         if (item.check === false) {
           item.check = true
@@ -46,7 +69,8 @@
       }
     },
     components: {
-      'dm-footer': footNav
+      'dm-footer': footNav,
+      'dm-cards': cards
     }
   }
 </script>
@@ -63,9 +87,10 @@
   .record-header .btn-box {
     margin: 0 auto;
     overflow: hidden;
-    width: 5rem;
+    display: flex;
   }
   .record-header button {
+    flex: 1;
     padding: 0 .85rem;
     float: left;
     border: 0;
