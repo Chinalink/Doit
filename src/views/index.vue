@@ -4,14 +4,14 @@
     <div class="index-topbox">
       <div class="index-topbox-radius">
         <div class="index-topbox-text">
-          <h3>下午好</h3>
+          <h3>{{ welcomeWord }}</h3>
           <p>
-            <span>May.</span><span>14</span><span>Mon</span><span>2018</span>
+            <span>{{ date.month }}</span><span>{{ date.day }}</span><span>{{ date.week }}</span><span>{{ date.year }}</span>
           </p>
         </div>
       </div>
       <router-link class="button button-error" :to="{ name: 'todoList' }">Do it</router-link>
-      <span class="tip">习惯就是人生的最大指导</span>
+      <span class="tip">{{ tips }}</span>
     </div>
   </div>
 </template>
@@ -20,6 +20,8 @@
   export default {
     data () {
       return {
+        welcomeWord: '',
+        tips: '',
         date: {
           year: '',
           month: '',
@@ -34,6 +36,8 @@
     methods: {
       init () {
         this.setDate()
+        this.setWelcomeWord()
+        this.setTips()
       },
       setDate () {
         const now = new Date()
@@ -43,26 +47,25 @@
         this.date.day = now.getDate()
         this.date.week = Week[now.getDay() - 1]
         this.date.year = now.getFullYear()
-      }
-    },
-    computed: {
-      word: function () {
-        let now = new Date()
-        let hh = now.getHours()
-        let time = [ 3, 6, 8, 11, 13, 17, 19, 23 ]
-        let text = [ '深夜咯', '早上好', '上午好', '中午好', '下午好', '日暮里', '晚上好', '夜深了' ]
-        for (let i = 0; i < time.length; i++) {
-          if (hh >= time[i] && hh < time[i + 1]) {
-            return text[i]
-          }
-          if (hh < time[i] || hh >= time[time.length - 1]) {
-            return text[text.length - 1]
-          }
-        }
       },
-      tip: function () {
-        let now = new Date()
-        let tips = [
+      setWelcomeWord () {
+        const now = new Date()
+        const hh = now.getHours()
+        const time = [ 3, 6, 8, 11, 13, 17, 19, 23 ]
+        const text = [ '深夜咯', '早上好', '上午好', '中午好', '下午好', '日暮里', '晚上好', '夜深了' ]
+        time.map((item, index, arr) => {
+          if (arr[0] <= hh && hh <= arr[arr.length - 1]) {
+            if (item <= hh && hh <= arr[index + 1]) {
+              this.welcomeWord = text[index]
+            }
+          } else {
+            this.welcomeWord = text[arr.length - 1]
+          }
+        })
+      },
+      setTips () {
+        const now = new Date()
+        const tips = [
           '习惯就是人生的最大指导',
           '我们坚持一件事情，并不是因为这样做了会有效果，而是坚信，这样做是对的',
           '凡不能杀死你的，终使你更加强大',
@@ -71,7 +74,7 @@
           '一个人只要强烈地坚持不懈地追求，他就能达到目的',
           '要在这个世界上获得成功，就必须坚持到底：至死都不能放手'
         ]
-        return tips[now.getDay() - 1]
+        this.tips = tips[now.getDay() - 1]
       }
     }
   }
